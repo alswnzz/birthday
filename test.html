@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #img2 {
+        position: absolute;
+        z-index: 1;
+    }
+    #img3 {
+        position: absolute;
+        z-index: 2;
+    }
+</style>
+<body>
+    <div class="img">
+        <div id="img1" onclick="nextImg()">
+            <img src="/1.png" style="width: 500px;" />
+        </div>
+        <div id="img2">
+            <img src="/2.png" style="width: 500px;" />
+        </div>
+        <div id="img3">
+            <img src="/3.png" style="width: 500px;" />
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#img2').hide();
+    $('#img3').hide();
+});
+function nextImg() {
+    $('#img1').hide();
+    $('#img2').fadeIn(2000);
+    $('#img2').fadeOut(500, function() {
+        $('#img3').fadeIn(3000);
+    });
+}
+</script>
+</html>
